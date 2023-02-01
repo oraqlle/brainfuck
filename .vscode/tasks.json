@@ -1,0 +1,55 @@
+{
+    "tasks": [
+        {
+            "type": "cppbuild",
+            "label": "bpt GCC build",
+            "command": "bpt",
+            "args": [
+                "build",
+                "-t",
+                ":c++20:gcc",
+                "-j",
+                "8",
+                "-o",
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds current bpt project using C++20 with g++"
+        },
+        {
+            "type": "cppbuild",
+            "label": "bpt GCC debug build",
+            "command": "bpt",
+            "args": [
+                "build",
+                "-t",
+                ":debug:c++20:gcc",
+                "-j",
+                "4",
+                "-o",
+                "build"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail": "Builds current bpt project using C++20 with g++ with debug symbols"
+        }
+    ],
+    "version": "2.0.0"
+}
