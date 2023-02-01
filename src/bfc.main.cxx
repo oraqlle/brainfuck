@@ -38,32 +38,30 @@ auto eval(const std::string& input, unsigned char* memptr) -> void
                 std::cin >> *memptr;
                 break;
             case '[':
-				if (*memptr == 0)
-				{
-					loop = 1;
-					while (loop > 0)
-					{
-						current = input[++i];
-						if (current == '[')
-							loop++;
-						else if (current == ']')
-							loop--;
-					}
-				}
+                if (*memptr == 0)
+                {
+                    loop = 1;
+                    while (loop > 0)
+                    {
+                        current = input[++i];
+                        current == '[' ? loop++ 
+                                       : current == ']' ? loop--
+                                       : loop;
+                    }
+                }
 				break;
 			case ']':
-				if (*memptr)
-				{
-					loop = 1;
-					while (loop > 0)
-					{
-						current = input[--i];
-						if (current == '[')
-							loop--;
-						else if (current == ']')
-							loop++;
-					}
-				}
+                if (*memptr)
+                {
+                    loop = 1;
+                    while (loop > 0)
+                    {
+                        current = input[--i];
+                        current == '[' ? loop-- 
+                                       : current == ']' ? loop++
+                                       : loop;
+                    }
+                }
             default:
                 break;
         }
